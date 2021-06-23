@@ -1,7 +1,7 @@
 .Card {
   border-style: solid;
-  border: #19466B;
-  background-color: #19466b;
+  border: #700202;
+  background-color: #700202;
   height: 100px;
   width: 100px;
   border-radius: 5px;
@@ -13,7 +13,7 @@
 }
 
 .Card.face-up {
-  border: #2A78B8;
-  background-color: #2A78B8;
+  border: #9c0000;
+  background-color: #9c0000;
   transform: rotateY(180deg);
 }
