@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Board from "./Board.js";
 import Button from "react-bootstrap/Button";
+import Timer from "./Timer";
 
 function App() {
   function shuffle() {
@@ -15,10 +16,23 @@ function App() {
       </span>
       <div>
         <Button color="primary" onClick={shuffle}>
-          Primary
+          Shuffle
         </Button>
       </div>
-      <Board />
+      <Timer />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "50vh",
+          flexWrap: "wrap",
+          alignItems: "flex-start",
+        }}
+      >
+        {" "}
+        <Board />
+      </div>
     </div>
   );
 }

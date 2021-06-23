@@ -1,19 +1,22 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import "./Card.css";
 
 class Card extends React.Component {
   render() {
     let content;
-    if(this.props.faceUp) {
+    if (this.props.faceUp) {
       content = this.props.content;
     } else {
-      content = ''
+      content = "";
     }
     return (
-      <div onClick={this.props.flip} className={`Card ${this.props.faceUp ? 'face-up': ''}`}>
+      <div
+        onClick={this.props.flip}
+        className={`Card ${this.props.faceDown ? "face-up" : ""}`}
+      >
         {content}
       </div>
-    )
+    );
   }
 }
 
