@@ -1,24 +1,17 @@
 import React from "react";
 import "./App.css";
 import Board from "./Board.js";
-import Button from "react-bootstrap/Button";
 import Timer from "./Timer";
+import Shuffle from "./Shuffle";
+import Modal from "./Modal";
 
 function App() {
-  function shuffle() {
-    window.location.reload(false);
-  }
-
   return (
     <div className="App">
       <span className="font-link">
         <header className="App-header">Memory Game</header>
       </span>
-      <div>
-        <Button color="primary" onClick={shuffle}>
-          Shuffle
-        </Button>
-      </div>
+      <Shuffle />
       <Timer />
       <div
         style={{
@@ -31,8 +24,9 @@ function App() {
         }}
       >
         {" "}
-        <Board />
+        <Board key="board" />
       </div>
+      <Modal />
     </div>
   );
 }

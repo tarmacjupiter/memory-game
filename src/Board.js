@@ -5,7 +5,7 @@ import "./Board.css";
 //ASK USER FOR AMOUNT OF CARDS
 let input = prompt("How many pairs would you like:");
 
-console.log(input);
+//console.log(input);
 
 var numbers = [];
 
@@ -13,7 +13,7 @@ for (var i = 0; i <= input - 1; i++) {
   numbers[i] = i;
 }
 
-console.log(numbers);
+//console.log(numbers);
 
 class Board extends React.Component {
   constructor(props) {
@@ -62,15 +62,14 @@ class Board extends React.Component {
           this.flipCardTo(this.state.firstCard, false);
           this.flipCardTo(cardIdx, false);
           this.setState({ firstCard: null });
-        }, 1500);
+        }, 1000);
       }
     }
-
     this.flipCardTo(cardIdx, !this.state.deck[cardIdx].faceUp);
   }
 
   render() {
-    console.log(this.state.firstCard);
+    //console.log(this.state.firstCard);
     return this.state.deck.map((f, i) => {
       return (
         <div className="Board">
