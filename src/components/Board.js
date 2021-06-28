@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card.js";
-import "./Board.css";
+import "./css/Board.css";
 
 //ASK USER FOR AMOUNT OF CARDS
 let input = prompt("How many pairs would you like:");

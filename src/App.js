@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import Board from "./Board.js";
-import Timer from "./Timer";
-import Shuffle from "./Shuffle";
-import Modal from "./Modal";
+import Board from "./components/Board.js";
+import Timer from "./components/Timer";
+import Shuffle from "./components/Shuffle";
+import Modal from "./components/Modal";
 
 function App() {
   return (
