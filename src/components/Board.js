@@ -5,15 +5,18 @@ import "./css/Board.css";
 //ASK USER FOR AMOUNT OF CARDS
 let input = prompt("How many pairs would you like:");
 
-//console.log(input);
+let parseNum = parseInt(input, 10);
 
+//Array for storing the input
 var numbers = [];
 
+//Loop that iterates each num in input
 for (var i = 0; i <= input - 1; i++) {
   numbers[i] = i;
 }
 
-//console.log(numbers);
+//Counts how many times you have matched a pair of cards
+let boardNum = 0;
 
 class Board extends React.Component {
   constructor(props) {
@@ -57,6 +60,11 @@ class Board extends React.Component {
       const secondCardContent = this.state.deck[cardIdx].content;
       if (firstCardContent === secondCardContent) {
         this.setState({ firstCard: null });
+        boardNum += 1;
+        console.log(boardNum);
+        if (boardNum === parseNum) {
+          alert("Fuck yea!");
+        }
       } else {
         setTimeout(() => {
           this.flipCardTo(this.state.firstCard, false);

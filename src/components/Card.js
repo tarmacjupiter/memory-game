@@ -7,7 +7,9 @@ class Card extends React.Component {
     if (this.props.faceUp) {
       content = this.props.content;
       // console.log(this.props.faceUp);
-      // if (this.props.content !== true || false || " ") {
+      // console.log(content);
+      // console.log(this.props.faceDown);
+      // if (content !== true || false || " ") {
       //   if (this.props.faceUp === true && this.props.faceDown === undefined) {
       //     console.log("hehe");
       //   }

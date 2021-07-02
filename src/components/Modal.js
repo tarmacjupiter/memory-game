@@ -24,13 +24,19 @@ const Modals = () => {
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton style={{ backgroundColor: "#CF8A7C" }}>
           <Modal.Title id="example-custom-modal-styling-title">
-            Modal
+            <h3
+              style={{
+                color: "white",
+              }}
+            >
+              Modal
+            </h3>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <p>You clicked {number} times</p>
+        <Modal.Body style={{ backgroundColor: "#5C5957" }}>
+          <p style={{ color: "white" }}>You clicked {number} times</p>
         </Modal.Body>
       </Modal>
     </>
