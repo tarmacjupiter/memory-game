@@ -12,7 +12,8 @@
     "react-circle-modal": "^0.0.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "react-timer-hook": "^3.0.4"
+    "react-timer-hook": "^3.0.4",
+    "reload": "^3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
