@@ -4,7 +4,8 @@ import Board from "./components/Board.js";
 import Timer from "./components/Timer";
 import Shuffle from "./components/Shuffle";
 import Modal from "./components/Modal";
-import State from "./components/State";
+// import State from "./components/State";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Board key="board" />
       </div>
       <Modal />
-      <State />
+      {/* <State /> */}
     </div>
   );
 }
