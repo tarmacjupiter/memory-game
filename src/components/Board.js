@@ -5,6 +5,7 @@ import "./css/Board.css";
 //ASK USER FOR AMOUNT OF CARDS
 let input = prompt("How many pairs would you like:");
 
+//Convert input string to a number
 let parseNum = parseInt(input, 10);
 
 //Array for storing the input
@@ -16,16 +17,10 @@ for (var i = 0; i <= input - 1; i++) {
 }
 
 //Counts how many times you have matched a pair of cards
-let boardNum = 0;
+let correctPairsNum = 0;
 
-//COUNTS NUMBER OF MOUSE CLICKS
-
-var number = 0;
-function addOne() {
-  number += 1;
-  console.log(number + " Add one function");
-}
-window.addEventListener("click", addOne, false);
+//Counts how many times you missed matches
+let incorrectPairsNum = 0;
 
 class Board extends React.Component {
   constructor(props) {
@@ -69,16 +64,18 @@ class Board extends React.Component {
       const secondCardContent = this.state.deck[cardIdx].content;
       if (firstCardContent === secondCardContent) {
         this.setState({ firstCard: null });
-        boardNum += 1;
-        console.log(boardNum + " boardNum variable");
-        if (boardNum === parseNum) {
+        correctPairsNum += 1;
+        // console.log(incorrectPairsNum + " right");
+        if (parseNum === correctPairsNum) {
           alert(
-            `You got ${Math.round(
-              (number - boardNum) / 2
-            )} wrong, and ${boardNum} right`
+            `You got ${incorrectPairsNum} wrong matches and ${correctPairsNum} right matches. You flipped ${
+              (incorrectPairsNum + correctPairsNum) * 2
+            } times`
           );
         }
       } else {
+        incorrectPairsNum += 1;
+        // console.log(incorrectPairsNum + " wrong");
         setTimeout(() => {
           this.flipCardTo(this.state.firstCard, false);
           this.flipCardTo(cardIdx, false);
