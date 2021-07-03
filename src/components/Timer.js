@@ -3,19 +3,11 @@ import { useStopwatch } from "react-timer-hook";
 import "./css/App.css";
 import Button from "react-bootstrap/Button";
 
-//COUNTS NUMBER OF MOUSE CLICKS
-
-var number = 0;
-function addOne() {
-  number += 1;
-  //console.log(number);
-}
-window.addEventListener("click", addOne, false);
-
 function MyStopwatch() {
   const { seconds, minutes, isRunning, pause, reset } = useStopwatch({
     autoStart: true,
   });
+
   return (
     <div style={{ textAlign: "center", marginBottom: 50 }}>
       <span className="font-link">

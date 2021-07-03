@@ -18,6 +18,15 @@ for (var i = 0; i <= input - 1; i++) {
 //Counts how many times you have matched a pair of cards
 let boardNum = 0;
 
+//COUNTS NUMBER OF MOUSE CLICKS
+
+var number = 0;
+function addOne() {
+  number += 1;
+  console.log(number + " Add one function");
+}
+window.addEventListener("click", addOne, false);
+
 class Board extends React.Component {
   constructor(props) {
     super(props);
@@ -61,9 +70,13 @@ class Board extends React.Component {
       if (firstCardContent === secondCardContent) {
         this.setState({ firstCard: null });
         boardNum += 1;
-        console.log(boardNum);
+        console.log(boardNum + " boardNum variable");
         if (boardNum === parseNum) {
-          alert("Fuck yea!");
+          alert(
+            `You got ${Math.round(
+              (number - boardNum) / 2
+            )} wrong, and ${boardNum} right`
+          );
         }
       } else {
         setTimeout(() => {
