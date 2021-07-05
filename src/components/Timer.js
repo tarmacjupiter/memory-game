@@ -2,6 +2,7 @@ import React from "react";
 import { useStopwatch } from "react-timer-hook";
 import "./css/App.css";
 import Button from "react-bootstrap/Button";
+import { parseNum, correctPairsNum } from "./Board";
 
 function MyStopwatch() {
   const { seconds, minutes, isRunning, pause, reset } = useStopwatch({
@@ -35,3 +36,5 @@ export default function App() {
     </div>
   );
 }
+
+// console.log(`${parseNum}: parseNum ||| ${correctPairsNum}: correctPairsNum `);

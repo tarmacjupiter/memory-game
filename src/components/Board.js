@@ -65,29 +65,26 @@ class Board extends React.Component {
       if (firstCardContent === secondCardContent) {
         this.setState({ firstCard: null });
         correctPairsNum += 1;
-        // console.log(incorrectPairsNum + " right");
         if (parseNum === correctPairsNum) {
           alert(
             `You got ${incorrectPairsNum} wrong matches and ${correctPairsNum} right matches. You flipped ${
               (incorrectPairsNum + correctPairsNum) * 2
-            } times`
+            } times\nYour time is below`
           );
         }
       } else {
         incorrectPairsNum += 1;
-        // console.log(incorrectPairsNum + " wrong");
         setTimeout(() => {
           this.flipCardTo(this.state.firstCard, false);
           this.flipCardTo(cardIdx, false);
           this.setState({ firstCard: null });
-        }, 1000);
+        }, 500);
       }
     }
     this.flipCardTo(cardIdx, !this.state.deck[cardIdx].faceUp);
   }
 
   render() {
-    //console.log(this.state.firstCard);
     return this.state.deck.map((f, i) => {
       return (
         <div className="Board">
@@ -103,5 +100,8 @@ class Board extends React.Component {
     });
   }
 }
+
+export { parseNum };
+export { correctPairsNum };
 
 export default Board;
