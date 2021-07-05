@@ -17,4 +17,6 @@ function Shuffle() {
   );
 }
 
+export { refresh };
+
 export default Shuffle;

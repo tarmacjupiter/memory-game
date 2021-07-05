@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card.js";
 import "./css/Board.css";
+import { refresh } from "./Shuffle.js";
 
 //ASK USER FOR AMOUNT OF CARDS
 let input = prompt("How many pairs would you like:");
@@ -71,6 +72,7 @@ class Board extends React.Component {
               (incorrectPairsNum + correctPairsNum) * 2
             } times\nYour time is below`
           );
+          refresh();
         }
       } else {
         incorrectPairsNum += 1;
@@ -100,8 +102,5 @@ class Board extends React.Component {
     });
   }
 }
-
-export { parseNum };
-export { correctPairsNum };
 
 export default Board;
